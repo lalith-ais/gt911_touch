@@ -53,32 +53,17 @@ Follow the [official guide](https://docs.espressif.com/projects/esp-idf/en/v5.5.
 cd gt911_touch
 ```
 
-### 3. Set the target
 
-```bash
-idf.py set-target esp32p4
-```
-
-> If you skip this step, the build will fail — the default target is `esp32`, which lacks the P4 peripherals.
-
-### 4. Install the GT911 component
-
-The `idf_component.yml` declares the dependency. The component manager will fetch it automatically on first build, but you can also pull it manually:
-
-```bash
-idf.py add-dependency "espressif/esp_lcd_touch_gt911^1.2.0"
-```
-
-### 5. Build, flash, monitor
+### 3. Build, flash, monitor
 
 ```bash
 idf.py build
-idf.py -p /dev/ttyUSB0 flash monitor   # adjust port as needed
+idf.py -p /dev/ttyACM0 flash monitor   # adjust port as needed
 ```
 
 On Windows:
 ```bash
-idf.py -p COM3 flash monitor
+	learn to use a proper operating system
 ```
 
 ---
