@@ -73,21 +73,43 @@ On Windows:
 On boot the firmware probes the I2C bus before doing anything else:
 
 ```
-I (312) TOUCH_IRQ: === Testing I2C Communication ===
-I (318) TOUCH_IRQ: ✓ GT911 detected at address 0x5D
-I (324) TOUCH_IRQ: Product ID: 0x39 0x31 0x31
-I (328) TOUCH_IRQ: ✓ GT911 confirmed!
-I (401) TOUCH_IRQ: ✓ I2C master bus created
-I (412) TOUCH_IRQ: ✓ Touch panel IO created
-I (489) TOUCH_IRQ: ✓ GT911 touch initialized (SDA=GPIO7, SCL=GPIO8, INT=GPIO21)
-I (490) TOUCH_IRQ: ✅ Interrupt mode ready! Touch the screen to see coordinates.
+ (1459) TOUCH_IRQ: ======================================
+I (1465) TOUCH_IRQ: GT911 Touch Dumper - INTERRUPT MODE
+I (1470) TOUCH_IRQ: ======================================
+
+I (1475) TOUCH_IRQ: 
+=== Testing I2C Communication ===
+I (1480) TOUCH_IRQ: ✓ GT911 detected at address 0x5D
+I (1485) TOUCH_IRQ: Product ID: 0x39 0x31 0x31
+I (1489) TOUCH_IRQ: ✓ GT911 confirmed!
+I (1493) TOUCH_IRQ: 
+I (1494) TOUCH_IRQ: Initializing GT911 touch controller (interrupt mode)
+I (1501) TOUCH_IRQ: ✓ I2C master bus created
+I (1505) TOUCH_IRQ: ✓ Touch panel IO created
+I (1580) GT911: TouchPad_ID:0x39,0x31,0x31
+I (1580) GT911: TouchPad_Config_Version:250
+I (1580) TOUCH_IRQ: ✓ GT911 touch initialized (SDA=GPIO7, SCL=GPIO8, INT=GPIO21)
+I (1584) TOUCH_IRQ: Touch processing task started - waiting for interrupts...
+I (1591) TOUCH_IRQ: ✅ Interrupt mode ready! Touch the screen to see coordinates.
+I (1598) TOUCH_IRQ:    (Only prints when touch is detected - no polling)
+
 ```
 
 Then, each time you touch the screen:
 
 ```
-I (8341) TOUCH_IRQ: [Touch #1] 1 point(s):
-I (8341) TOUCH_IRQ:   Point 0: X= 240, Y= 400, Strength= 42
+I (25790) TOUCH_IRQ: [Touch #1] 1 point(s):
+I (25791) TOUCH_IRQ:   Point 0: X= 215, Y= 424, Strength= 36
+I (25791) TOUCH_IRQ: 
+
+
+I (50914) TOUCH_IRQ: [Touch #14] 4 point(s):
+I (50917) TOUCH_IRQ:   Point 0: X= 469, Y= 514, Strength= 30
+I (50922) TOUCH_IRQ:   Point 1: X= 127, Y= 597, Strength= 33
+I (50928) TOUCH_IRQ:   Point 2: X= 111, Y= 207, Strength= 43
+I (50933) TOUCH_IRQ:   Point 3: X= 320, Y= 235, Strength= 39
+
+
 ```
 
 A status report prints every 10 seconds showing total touch count.
